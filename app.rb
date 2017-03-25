@@ -6,7 +6,7 @@ require 'sinatra/activerecord'
 
 set :database, "sqlite3:barbershop.db"
 
-#создаем сущность
+#создаем сущность (entity) ActiveRecord - пространство имен, а Base базовый класс
 class Client   < ActiveRecord::Base
 end
 
