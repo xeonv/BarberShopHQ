@@ -5,10 +5,10 @@ class CreateBarbers < ActiveRecord::Migration
   			
   			t.timestamps
   	end
-  end
+  
 
   Barber.create :name => 'Jessie Pinkman'
   Barber.create :name => 'Walter White'
   Barber.create :name => 'Gus Fring'
-
+  end
 end
