@@ -13,6 +13,8 @@ end
 class Barber < ActiveRecord::Base
 end
 
+class Contact < ActiveRecord::Base
+end
 
 before do
 	@barbers = Barber.order "created_at DESC"
