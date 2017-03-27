@@ -58,6 +58,6 @@ post '/contacts' do
 				@error = 'Введите текст для отправки. '
 				return erb :contacts
 			end
-
+	Contact.create :email =>email, :text =>text
 	return erb "Спасибо за Ваш отзыв!"
 end
