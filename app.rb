@@ -12,6 +12,8 @@ end
 
 class Barber < ActiveRecord::Base
 end
+
+
 before do
 	@barbers = Barber.order "created_at DESC"
 end
@@ -39,4 +41,21 @@ post '/visit' do
 
 	erb "<h2>Спасибо, вы записались!</h2>"
 
+end
+
+get '/contacts' do
+	erb :contacts
+end
+
+
+post '/contacts' do
+	text = params[:text]
+	email = params[:email]
+
+		if text == ''
+				@error = 'Введите текст для отправки. '
+				return erb :contacts
+			end
+
+	return erb "Спасибо за Ваш отзыв!"
 end
