@@ -30,23 +30,19 @@ end
 
 
 get '/visit' do
+	@c = Client.new
 	erb :visit
 end
 
 post '/visit' do
 
-	@username = params[:username]
-	@phone = params[:phone]
-	@datetime = params[:datetime]
-	@barber = params[:barber]
-	@color = params[:color]
+	@c = Client.new params[:client]
 
-	c = Client.new :name => @username, :phone => @phone, :datestamp => @datetime, :barber => @barber, :color => @color
-
-	if c.save
+	if @c.save
 		erb "<h2>Спасибо, вы записались!</h2>"
 	else
-		erb "<h2>Ошибка!</h2>"
+		@error = @c.errors.full_messages.first
+		erb :visit
 	end
 
 end
