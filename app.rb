@@ -63,3 +63,8 @@ post '/contacts' do
 	Contact.create :email =>email, :text =>text
 	return erb "Спасибо за Ваш отзыв!"
 end
+
+get '/barber/:post_id' do
+	id = params[:post_id]
+	erb "#{id}"
+end
