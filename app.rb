@@ -65,6 +65,12 @@ post '/contacts' do
 end
 
 get '/barber/:post_id' do
-	@barber = Barber.find(params[:post_id])
+	@barber = Barber.find (params[:post_id])
 	erb :barber
+end
+
+get '/bookings' do
+	@clients = Client.all
+	erb :bookings
+
 end
