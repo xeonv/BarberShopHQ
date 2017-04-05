@@ -1,6 +1,6 @@
 <h2>Записавшиеся</h2>
 <%@clients.each do |client|%>
 	<p>
-		<a href=""><%=client.name%></a>
+		<a href="/client/<%=client.id%>"><%=client.name%></a>
 	</p>
 <%end%>
