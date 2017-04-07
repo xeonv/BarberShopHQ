@@ -22,7 +22,7 @@
   <label>Парикмахер</label>
     <select name="client[barber]">
       <%@barbers.each do |brb|%>
-        <option value="<%=brb.name%>"><%=brb.name%></option>
+        <option <%=@c.barber == brb.name ? 'selected' : ''%> value="<%=brb.name%>"><%=brb.name%></option>
       <%end%>
     </select>
   </div>
