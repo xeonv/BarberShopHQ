@@ -20,7 +20,7 @@
 
   <div class="form-group">
   <label>Парикмахер</label>
-    <select name="client[barber]">
+    <select class="form-control" name="client[barber]">
       <%@barbers.each do |brb|%>
         <option <%=@c.barber == brb.name ? 'selected' : ''%> value="<%=brb.name%>"><%=brb.name%></option>
       <%end%>
