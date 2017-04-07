@@ -18,6 +18,15 @@
     <input id="datetimepicker" name="client[datestamp]" type="text" class="form-control" placeholder="Введите дату и время" value="<%= @c.datestamp %>">
   </div>
 
+  <div class="form-group">
+  <label>Парикмахер</label>
+    <select name="client[barber]">
+      <%@barbers.each do |brb|%>
+        <option value="<%=brb.name%>"><%=brb.name%></option>
+      <%end%>
+    </select>
+  </div>
+
 
 
   <div class="form-group">
